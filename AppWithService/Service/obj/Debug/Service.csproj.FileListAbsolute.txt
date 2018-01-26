@@ -1,0 +1,15 @@
+D:\github\TerrenceHuang\wpf-test\AppWithService\Service\bin\Debug\Service.exe.config
+D:\github\TerrenceHuang\wpf-test\AppWithService\Service\bin\Debug\Service.exe
+D:\github\TerrenceHuang\wpf-test\AppWithService\Service\bin\Debug\Service.pdb
+D:\github\TerrenceHuang\wpf-test\AppWithService\Service\obj\Debug\MainWindow.g.cs
+D:\github\TerrenceHuang\wpf-test\AppWithService\Service\obj\Debug\App.g.cs
+D:\github\TerrenceHuang\wpf-test\AppWithService\Service\obj\Debug\Service_MarkupCompile.cache
+D:\github\TerrenceHuang\wpf-test\AppWithService\Service\obj\Debug\Service_MarkupCompile.lref
+D:\github\TerrenceHuang\wpf-test\AppWithService\Service\obj\Debug\MainWindow.baml
+D:\github\TerrenceHuang\wpf-test\AppWithService\Service\obj\Debug\Service.g.resources
+D:\github\TerrenceHuang\wpf-test\AppWithService\Service\obj\Debug\Service.Properties.Resources.resources
+D:\github\TerrenceHuang\wpf-test\AppWithService\Service\obj\Debug\Service.csproj.GenerateResource.Cache
+D:\github\TerrenceHuang\wpf-test\AppWithService\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+D:\github\TerrenceHuang\wpf-test\AppWithService\Service\obj\Debug\Service.exe
+D:\github\TerrenceHuang\wpf-test\AppWithService\Service\obj\Debug\Service.pdb
+D:\github\TerrenceHuang\wpf-test\AppWithService\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
