@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SerialPortControler")]
+[assembly: AssemblyTitle("Official")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("SYNNEX")]
-[assembly: AssemblyProduct("SerialPortControler")]
+[assembly: AssemblyProduct("Official")]
 [assembly: AssemblyCopyright("Copyright © SYNNEX 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9c92f6e3-ff83-461c-ae6d-61abce414b70")]
+[assembly: Guid("5d36495b-34bd-4ad3-84ee-fdf2b6379b61")]
 
 // Version information for an assembly consists of the following four values:
 //

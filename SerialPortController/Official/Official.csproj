@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9C92F6E3-FF83-461C-AE6D-61ABCE414B70}</ProjectGuid>
+    <ProjectGuid>{5D36495B-34BD-4AD3-84EE-FDF2B6379B61}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SerialPortControler</RootNamespace>
-    <AssemblyName>SerialPortControler</AssemblyName>
+    <RootNamespace>Official</RootNamespace>
+    <AssemblyName>Official</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
