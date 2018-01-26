@@ -44,6 +44,8 @@ namespace SerialPortController {
             return SerialPort.GetPortNames();
         }
 
+
+        // need to impliment queue
         public async Task sendStr(string str) {
             
             while (this.serialPort.IsOpen) {
@@ -57,8 +59,8 @@ namespace SerialPortController {
                 this.serialPort.Write(str);
             });
             this.serialPort.Close();
-        }
 
+        }
         #endregion
     }
 }

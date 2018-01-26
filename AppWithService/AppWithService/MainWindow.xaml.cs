@@ -37,8 +37,8 @@ namespace AppWithService
         void newProcess() {
 
             ProcessStartInfo processStartInfo = new ProcessStartInfo();
-            processStartInfo.UseShellExecute = false;
             processStartInfo.FileName = Environment.CurrentDirectory + '\\' + this.startFileName;
+            processStartInfo.UseShellExecute = false;
             processStartInfo.RedirectStandardOutput = true;
 
             // Tow start ways.
@@ -68,15 +68,16 @@ namespace AppWithService
                 Console.WriteLine(outputMessage);
 
                 // Other thread need use this method to update UI.
-                this.Dispatcher.Invoke((Action)(() => {
+                this.Dispatcher.Invoke(() => {
 
                     this.label.Content += "\n" + outputMessage;
-                }));
+                });
             }
         }
 
         void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e) {
-
+            
+            // need to check whether mainwindow exist
             this.process.CloseMainWindow();
             this.process.Close();
         }
