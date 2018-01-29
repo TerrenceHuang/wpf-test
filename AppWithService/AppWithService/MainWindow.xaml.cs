@@ -37,7 +37,8 @@ namespace AppWithService
         void newProcess() {
 
             ProcessStartInfo processStartInfo = new ProcessStartInfo();
-            processStartInfo.FileName = Environment.CurrentDirectory + '\\' + this.startFileName;
+            processStartInfo.WorkingDirectory = Environment.CurrentDirectory;
+            processStartInfo.FileName = this.startFileName;
             processStartInfo.UseShellExecute = false;
             processStartInfo.RedirectStandardOutput = true;
 
