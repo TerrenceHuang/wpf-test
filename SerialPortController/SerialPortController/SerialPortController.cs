@@ -43,8 +43,7 @@ namespace SerialPortController {
 
             return SerialPort.GetPortNames();
         }
-
-
+        
         // need to impliment queue
         public async Task sendStr(string str) {
             
