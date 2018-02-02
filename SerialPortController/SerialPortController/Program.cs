@@ -9,7 +9,7 @@ namespace SerialPortController {
         static readonly string portName = "com5";
         static readonly int baudRate = 115200;
 
-        static SerialPortController SerialPortController;
+        static SerialPortController serialPortController;
 
         #endregion
 
@@ -19,7 +19,7 @@ namespace SerialPortController {
 
             //Program.printList(SerialPortController.getPortNames());
 
-            Program.SerialPortController = new SerialPortController(Program.portName, Program.baudRate);
+            Program.serialPortController = new SerialPortController(Program.portName, Program.baudRate);
 
             Program.startSend();
 
@@ -44,7 +44,7 @@ namespace SerialPortController {
                     notEnd = false;
                 }else {
 
-                    Program.SerialPortController.sendStr(message);
+                    Program.serialPortController.sendStr(message);
                 }
             }
         }

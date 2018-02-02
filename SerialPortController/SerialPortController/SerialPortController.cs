@@ -45,7 +45,7 @@ namespace SerialPortController {
         }
         
         // need to impliment queue
-        public async Task sendStr(string str) {
+        public async void sendStr(string str) {
             
             while (this.serialPort.IsOpen) {
 

@@ -9,7 +9,7 @@ namespace Architecture {
     class ClassRegion {
 
         #region Properties
-        
+
         #endregion
 
         #region Fields
@@ -23,6 +23,10 @@ namespace Architecture {
 
         #region Methods
 
+        #endregion
+
+        #region Event handlers
+        
         #endregion
     }
 }

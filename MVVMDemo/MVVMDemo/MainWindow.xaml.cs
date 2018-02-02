@@ -27,12 +27,14 @@ namespace MVVMDemo {
             InitializeComponent();
         }
 
-        void StudentViewControl_Loaded(object sender, RoutedEventArgs e) {
+        // 1
+        //void StudentViewControl_Loaded(object sender, RoutedEventArgs e) {
 
-            ViewModels.StudentViewModel studentViewModelObject = new ViewModels.StudentViewModel();
-            studentViewModelObject.LoadStudents();
+        //    ViewModels.StudentViewModel studentViewModelObject = new ViewModels.StudentViewModel();
+        //    studentViewModelObject.LoadStudents();
 
-            this.StudentViewControl.DataContext = studentViewModelObject;
-        }
+        //    this.StudentViewControl.DataContext = studentViewModelObject;
+        //}
+        // .1
     }
 }
