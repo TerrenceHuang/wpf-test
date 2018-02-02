@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using System.Windows;
+using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace OpenFolderTest {
 
@@ -14,7 +15,7 @@ namespace OpenFolderTest {
         }
 
         void BtnOpenFile_Click(object sender, RoutedEventArgs e) {
-
+            /*
             OpenFileDialog openFileDialog = new OpenFileDialog();
             // Set validate names and check file exits to false otherwise windows will
             // not let you select "Folder Selection."
@@ -27,7 +28,11 @@ namespace OpenFolderTest {
 
             if (openFileDialog.ShowDialog() == true) {
                 TxtEditor.Text = openFileDialog.FileName;
-            }
+            }*/
+
+            CommonOpenFileDialog commonOpenFileDialog = new CommonOpenFileDialog();
+            commonOpenFileDialog.IsFolderPicker = true;
+            CommonFileDialogResult result = commonOpenFileDialog.ShowDialog();
         }
     }
 }
