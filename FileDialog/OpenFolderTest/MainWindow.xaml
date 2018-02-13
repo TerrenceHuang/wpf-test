@@ -19,6 +19,12 @@
                 Click="BtnOpenFile_Click">
                 Open file
             </Button>
+
+            <Button 
+                Name="BtnSaveFile" 
+                Click="BtnSaveFile_Click">
+                Save file
+            </Button>
         </WrapPanel>
 
         <TextBox Name="TxtEditor" />

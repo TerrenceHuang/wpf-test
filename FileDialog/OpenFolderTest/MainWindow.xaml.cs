@@ -33,6 +33,24 @@ namespace OpenFolderTest {
             CommonOpenFileDialog commonOpenFileDialog = new CommonOpenFileDialog();
             commonOpenFileDialog.IsFolderPicker = true;
             CommonFileDialogResult result = commonOpenFileDialog.ShowDialog();
+            if (result == CommonFileDialogResult.Ok) {
+
+                TxtEditor.Text = commonOpenFileDialog.FileName;
+            }
+        }
+
+        void BtnSaveFile_Click(object sender, RoutedEventArgs e) {
+
+
+            CommonSaveFileDialog commonSaveFileDialog = new CommonSaveFileDialog();
+            commonSaveFileDialog.DefaultFileName = "Script";
+
+            CommonFileDialogResult result = commonSaveFileDialog.ShowDialog();
+
+            if (result == CommonFileDialogResult.Ok) {
+
+                TxtEditor.Text = commonSaveFileDialog.FileName;
+            }
         }
     }
 }
