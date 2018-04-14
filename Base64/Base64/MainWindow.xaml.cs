@@ -23,7 +23,7 @@ namespace SendBase64 {
     /// </summary>
     public partial class MainWindow : Window {
 
-        const string imgPath = @"D:\csharp\WPF\Base64\Base64\Sprites\angular.jpg";
+        const string imgPath = @"D:\github\TerrenceHuang\wpf-test\Base64\Base64\Sprites\angular.jpg";
         BitmapImage bitmapImage;
         string base64Image;
 

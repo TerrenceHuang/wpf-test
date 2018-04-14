@@ -100,5 +100,11 @@
   <ItemGroup>
     <Resource Include="Sprites\angular.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Sprites\black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Sprites\Nice.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

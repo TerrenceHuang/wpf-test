@@ -11,6 +11,10 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <Ellipse 
             Height="50" Width="50" Fill="Green"
             MouseMove="ellipse_MouseMove"
@@ -20,6 +24,22 @@
             DragOver="ellipse_DragOver" Drop="ellipse_Drop" />
         <Ellipse 
             Grid.Column="1"
+            Height="50" Width="50" Fill="Red"
+            MouseMove="ellipse_MouseMove"
+            GiveFeedback="ellipse_GiveFeedback"
+            AllowDrop="True"
+            DragEnter="ellipse_DragEnter" DragLeave="ellipse_DragLeave"
+            DragOver="ellipse_DragOver" Drop="ellipse_Drop" />
+        <Ellipse 
+            Grid.Row="1"
+            Height="50" Width="50" Fill="Green"
+            MouseMove="ellipse_MouseMove"
+            GiveFeedback="ellipse_GiveFeedback"
+            AllowDrop="True" 
+            DragEnter="ellipse_DragEnter" DragLeave="ellipse_DragLeave"
+            DragOver="ellipse_DragOver" Drop="ellipse_Drop" />
+        <Ellipse 
+            Grid.Row="1" Grid.Column="1"
             Height="50" Width="50" Fill="Red"
             MouseMove="ellipse_MouseMove"
             GiveFeedback="ellipse_GiveFeedback"

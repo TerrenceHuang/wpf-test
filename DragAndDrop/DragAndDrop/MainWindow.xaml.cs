@@ -29,7 +29,8 @@ namespace DragAndDrop {
             Ellipse ellipse = sender as Ellipse;
             if (ellipse != null && e.LeftButton == MouseButtonState.Pressed) {
 
-                DragDrop.DoDragDrop(ellipse, ellipse.Fill.ToString(), DragDropEffects.Copy);
+                DragDrop.DoDragDrop(ellipse, ellipse.Fill.ToString(), DragDropEffects.Copy | DragDropEffects.Move);
+                //DragDrop.DoDragDrop(ellipse, ellipse, DragDropEffects.Copy | DragDropEffects.Move);
             }
         }
 
@@ -42,6 +43,7 @@ namespace DragAndDrop {
                 // Save the current Fill brush so that you can revert back to this value in DragLeave.
                 _previousFill = ellipse.Fill;
 
+                //Console.WriteLine((e.Data.GetData(typeof(Ellipse)) as Ellipse).Fill.ToString());
                 // If the DataObject contains string data, extract it.
                 if (e.Data.GetDataPresent(DataFormats.StringFormat)) {
 
@@ -71,12 +73,14 @@ namespace DragAndDrop {
                 BrushConverter converter = new BrushConverter();
                 if (converter.IsValid(dataString)) {
 
-                    e.Effects = DragDropEffects.Copy | DragDropEffects.Move;
+                    e.Effects = DragDropEffects.Copy;
                 }
             }
         }
 
         private void ellipse_GiveFeedback(object sender, GiveFeedbackEventArgs e) {
+
+            
         }
 
         private void ellipse_DragLeave(object sender, DragEventArgs e) {

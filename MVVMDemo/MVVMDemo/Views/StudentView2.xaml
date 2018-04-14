@@ -23,11 +23,12 @@
 
                         <StackPanel Orientation="Horizontal">
 
-                            <TextBox 
-                                Text="{Binding Path=FirstName, Mode=TwoWay}"
-                                Width="100" Margin="3 5 3 5"/>
+                            <TextBox
+                                Text="{Binding Path=FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                Width="100" Margin="3 5 3 5">
+                            </TextBox>
 
-                            <TextBox 
+                            <TextBox
                                 Text="{Binding Path=LastName, Mode=TwoWay}"
                                 Width="100" Margin="0 5 3 5"/>
 
