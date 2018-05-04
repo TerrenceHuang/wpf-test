@@ -9,13 +9,14 @@ namespace PosiflexPrinter {
 
     class PrinterController {
 
-        public static void PrintQRCode() {
+        public static string PrinterName { get; set; }
+
+        public static void PrintQRCode(string data) {
 
             byte[] bytesValue = { 0x1B, Convert.ToByte('@') };
 
 
-            bytesValue = PrintExtensions.AddBytes(bytesValue, PrinterController.getQRCode("Hello there", 16));
-            
+            bytesValue = PrintExtensions.AddBytes(bytesValue, PrinterController.getQRCode(data, 16));
 
             // line feed
             bytesValue = PrintExtensions.AddBytes(bytesValue, new byte[] { 0x0A });
@@ -23,12 +24,7 @@ namespace PosiflexPrinter {
             bytesValue = PrintExtensions.AddBytes(bytesValue, new byte[] { 0x0A });
             bytesValue = PrintExtensions.AddBytes(bytesValue, PrinterController.getCutPage());
 
-            try {
-
-                PrintExtensions.Print(bytesValue, @"\\localhost\Posiflex PP7600 Printer");
-            }catch {
-
-            }
+            PrinterController.print(bytesValue);
         }
 
         // 1 <= size <= 16
@@ -55,6 +51,17 @@ namespace PosiflexPrinter {
 
             byte[] bytes = { 0x1B, 0x69 };
             return bytes;
+        }
+
+        private static void print(byte[] bytesValue) {
+            
+            try {
+
+                PrintExtensions.Print(bytesValue, PrinterName);
+            }catch {
+
+                Console.WriteLine("PrintExtensions.Print fail");
+            }
         }
     }
 }
