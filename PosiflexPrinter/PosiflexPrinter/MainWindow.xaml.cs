@@ -25,13 +25,15 @@ namespace PosiflexPrinter {
         public MainWindow() {
 
             InitializeComponent();
-            StimaPrinterController.PrinterName = @"\\localhost\STIMA";
+            //PrinterController.PrinterName = @"\\localhost\Posiflex Printer";
 
-            this.sveltaController = new SveltaController();
-            sveltaController.PrinterName = @"\\localhost\STIMA";
+            //this.sveltaController = new SveltaController();
+            //sveltaController.PrinterName = @"\\localhost\STIMA";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e) {
+
+            //PrinterController.PrintQRCode("Hello");
 
             StimaPrinterController.PrintTicket();
 

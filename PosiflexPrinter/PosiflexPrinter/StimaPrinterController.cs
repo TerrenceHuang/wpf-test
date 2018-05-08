@@ -9,41 +9,50 @@ namespace PosiflexPrinter {
 
     class StimaPrinterController {
 
-        public static string PrinterName { get; set; }
+        static string printerName = @"\\localhost\STIMA";
+
+        static byte[] changePrinterEmulationToEscPos = Encoding.UTF8.GetBytes("<EPOS>");
+        static byte[] ESC = { 0x1B };
+        static byte[] GS = { 0x1D };
+        static byte[] LF = { 0x0A };
+        static byte[] cutPage = { 0x1B, 0x69 };
+        static byte[] initializePrinter = PrintExtensions.AddBytes(ESC, "@");
+        static byte[] boldOn = PrintExtensions.AddBytes(ESC, new byte[] { Convert.ToByte('E'), 0x01 });
+        static byte[] boldOff = PrintExtensions.AddBytes(ESC, new byte[] { Convert.ToByte('E'), 0x00 });
+        static byte[] doubleOn = PrintExtensions.AddBytes(GS, new byte[] { Convert.ToByte('!'), 0x11 });
+        static byte[] doubleOff = PrintExtensions.AddBytes(GS, new byte[] { Convert.ToByte('!'), 0x00 });
+        static byte[] centered = PrintExtensions.AddBytes(ESC, new byte[] { Convert.ToByte('a'), 0x01 });
+        static byte[] left = PrintExtensions.AddBytes(ESC, new byte[] { Convert.ToByte('a'), 0x00 });
 
         public static void PrintTicket() {
 
             byte[] bytesValue = { };
-            bytesValue = changePrinterEmulationToEscPos();
-            bytesValue = PrintExtensions.AddBytes(bytesValue, StimaPrinterController.headerTest());
+            bytesValue = PrintExtensions.AddBytes(bytesValue, changePrinterEmulationToEscPos);
+            bytesValue = PrintExtensions.AddBytes(bytesValue, initializePrinter);
 
             // set notch distance
             bytesValue = PrintExtensions.AddBytes(bytesValue, new byte[] { 0x1D, 0xE7, 0x00, 0x00 });
+            bytesValue = PrintExtensions.AddBytes(bytesValue, new byte[] { 0x1D, 0xF6 });
 
-            //// set 90 rotated print mode
-            //bytesValue = PrintExtensions.AddBytes(bytesValue, new byte[] { 0x1B, 0x56, 0x00 });
+            //// rotation
+            //bytesValue = PrintExtensions.AddBytes(bytesValue, ESC);
+            //bytesValue = PrintExtensions.AddBytes(bytesValue, new byte[] { Convert.ToByte('V'), 0x49 });
 
-            //bytesValue = PrintExtensions.AddBytes(bytesValue, new byte[] { 0x1D, 0xE7, 0x00, 0x00 });
-            bytesValue = PrintExtensions.AddBytes(bytesValue, "Hello There 10"); 
+            bytesValue = PrintExtensions.AddBytes(bytesValue, "Hello World!"); 
+            bytesValue = PrintExtensions.AddBytes(bytesValue, new byte[] { 0x0A });
 
             // line feed
-            bytesValue = PrintExtensions.AddBytes(bytesValue, new byte[] { 0x0A });
             bytesValue = PrintExtensions.AddBytes(bytesValue, "Hello There 11");
             bytesValue = PrintExtensions.AddBytes(bytesValue, new byte[] { 0x0A });
             bytesValue = PrintExtensions.AddBytes(bytesValue, new byte[] { 0x1B, 0x64, 0x10 });
             bytesValue = PrintExtensions.AddBytes(bytesValue, "Hello There 12");
             bytesValue = PrintExtensions.AddBytes(bytesValue, new byte[] { 0x0A });
-            bytesValue = PrintExtensions.AddBytes(bytesValue, new byte[] { 0x1C, 0x82 });
-            bytesValue = PrintExtensions.AddBytes(bytesValue, new byte[] { 0x0A });
+
+            // set notch distance
+            bytesValue = PrintExtensions.AddBytes(bytesValue, new byte[] { 0x1D, 0xE7, 0x01, 0x30 });
             bytesValue = PrintExtensions.AddBytes(bytesValue, StimaPrinterController.getCutPage());
 
             StimaPrinterController.print(bytesValue);
-        }
-
-        private static byte[] changePrinterEmulationToEscPos() {
-            
-            byte[] bytes = Encoding.UTF8.GetBytes("<EPOS>");
-            return bytes;
         }
 
         private static byte[] headerTest() {
@@ -63,7 +72,7 @@ namespace PosiflexPrinter {
             
             try {
 
-                PrintExtensions.Print(bytesValue, PrinterName);
+                PrintExtensions.Print(bytesValue, printerName);
             }catch {
 
                 Console.WriteLine("PrintExtensions.Print fail");

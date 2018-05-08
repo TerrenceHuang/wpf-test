@@ -16,7 +16,9 @@ namespace PosiflexPrinter {
             byte[] bytesValue = { 0x1B, Convert.ToByte('@') };
 
 
-            bytesValue = PrintExtensions.AddBytes(bytesValue, PrinterController.getQRCode(data, 16));
+            //bytesValue = PrintExtensions.AddBytes(bytesValue, PrinterController.getQRCode(data, 16));
+            bytesValue = PrintExtensions.AddBytes(bytesValue, "Hello world");
+            bytesValue = PrintExtensions.AddBytes(bytesValue, new byte[] { 0x0A });
 
             // line feed
             bytesValue = PrintExtensions.AddBytes(bytesValue, new byte[] { 0x0A });
